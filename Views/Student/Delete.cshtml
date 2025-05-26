@@ -1,0 +1,39 @@
+﻿@model Buoi5.Models.Student
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3 class="mt-3">Bạn có muốn xóa sinh viên này không ?</h3>
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Họ
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            Tên
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            Lớp
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Grade.GradeName)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="StudentId" />
+        <input type="submit" value="Xóa" class="btn btn-danger btn-sm" />
+        <a asp-action="Index" class="btn btn-secondary btn-sm">
+            <i class="bi bi-arrow-left-circle me-1"></i> Về danh sách
+        </a>
+    </form>
+</div>
